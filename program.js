@@ -37,6 +37,15 @@ program
   .action(actions.handleCreateProject);
 
 program
+    .command('time <id> <hours> <comments>')
+    .description('Record time on issue')
+    .option('-d, --date <date>','the date the time was spent (default to the current date)')
+    .option('-a, --activity_id <activity_id>','the id of the time activity. This parameter is required unless a default activity is defined in Redmine.',9)
+    .option('-c, --custom_field_values <custom_field_values>','hash with values','')
+
+    .action(actions.handleTime);
+
+program
   .command('issues')
   .description('Display issues.')
   .option('-p, --project <project>', 'Only display issues for the specified project.')
