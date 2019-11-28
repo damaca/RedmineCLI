@@ -1,8 +1,5 @@
-# RedmineCLI [![Build Status](https://travis-ci.org/a11n/RedmineCLI.svg)](https://travis-ci.org/a11n/RedmineCLI) [![Coverage Status](https://coveralls.io/repos/a11n/RedmineCLI/badge.svg)](https://coveralls.io/r/a11n/RedmineCLI) [![npm version](http://img.shields.io/npm/v/redmine-cli.svg?style=flat)](https://www.npmjs.com/package/redmine-cli) [![npm license](https://img.shields.io/npm/l/redmine-cli.svg)](https://www.npmjs.com/package/redmine-cli)
+# RedmineCLI [![Build Status](https://travis-ci.org/caherrera/RedmineCLI.svg)](https://travis-ci.org/caherrera/RedmineCLI) [![Coverage Status](https://coveralls.io/repos/caherrera/RedmineCLI/badge.svg)](https://coveralls.io/r/caherrera/RedmineCLI) [![npm version](http://img.shields.io/npm/v/redmine-cli.svg?style=flat)](https://www.npmjs.com/package/redmine-cli) [![npm license](https://img.shields.io/npm/l/redmine-cli.svg)](https://www.npmjs.com/package/redmine-cli)
 A NodeJS, stateful, console-based Redmine client.
-
-## Deprecated
-**This project is deprecated. There will be no new development on this project.**
 
 ## Installation & Setup
 ```shell
@@ -16,7 +13,7 @@ Connect to your Redmine instance.
 
 You are all set, have fun :)
 
-## Usage
+## Usages
 Display available commands and options.
 ```shell
 >redmine --help
@@ -28,6 +25,7 @@ projects                                      Display projects.
 project <identifier>                          Display project details.
 update-project [options] <identifier>         Update the specified project.
 create-project [options] <name> <identifier>  Create a new project.
+time [options] <id> <hours> <comments>        Record time on issue.
 issues [options]                              Display issues.
 issue [options] <id>                          Display issue details.
 update-issue [options] <id>                   Update the specified issue.
@@ -103,6 +101,10 @@ HISTORY
 It's still under ~~active~~ development!
 
 ## Changelog
+### v0.9.0
+* New features
+ * Log time
+
 ### v0.8.0
 * New features
  * Update projects
