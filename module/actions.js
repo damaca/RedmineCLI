@@ -143,7 +143,8 @@ exports.handleOpen = function (id) {
 
 exports.handleTime = function (id, hours, comments, options) {
     try {
-        redmine.logTime(id, hours, comments, options);
+        var logTime = redmine.logTime(id, hours, comments, options);
+        console.log('Successfully created #' + logTime.time_entry.id);
     } catch (err) {
         console.error(err)
     }
