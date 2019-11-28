@@ -3,8 +3,16 @@ var nconf = require('nconf');
 var openInBrowser = require('open');
 var querystring = require('querystring');
 var resolver = require('./resolver.js');
+const fs = require('fs');
+const homedir = require('os').homedir();
 
-nconf.file(__dirname + '/../config.json');
+
+var config_json;
+if (fs.existsSync(config_json = homedir + '/.redmine-cli.json')) {
+    nconf.file(config_json);
+} else {
+    nconf.file(__dirname + '/../config.json');
+}
 
 var throwWhenNotConnected = function () {
     if (!nconf.get('serverUrl') || !nconf.get('apiKey'))
@@ -251,10 +259,10 @@ exports.logTime = function (id, hours, comments, options) {
         }
 
         if (options.custom_field_values) {
-            var custom=options.custom_field_values.split('=');
-            var k=custom[0];
-            var v=[custom[1]];
-            eval('issueTime.time_entry.custom_field_values = {'+k+':v}');
+            var custom = options.custom_field_values.split('=');
+            var k = custom[0];
+            var v = [custom[1]];
+            eval('issueTime.time_entry.custom_field_values = {' + k + ':v}');
         }
 
         var response = post('/time_entries.json', issueTime);
