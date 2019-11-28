@@ -1,6 +1,6 @@
 {
   "name": "redmine-cli",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description": "A NodeJS Redmine client.",
   "preferGlobal": "true",
   "directories": {
@@ -8,9 +8,9 @@
     "test": "test"
   },
   "devDependencies": {
-    "coveralls": "^2.11.2",
+    "coveralls": "^3.0.9",
     "istanbul": "^0.3.13",
-    "jasmine-node": "^1.14.5",
+    "jasmine-node": "^3.0.0",
     "rewire": "^2.3.1"
   },
   "dependencies": {
@@ -19,7 +19,7 @@
     "commander": "^2.7.1",
     "moment": "^2.9.0",
     "nconf": "^0.7.1",
-    "open": "0.0.5",
+    "open": "^7.0.0",
     "swig": "^1.4.2",
     "sync-request": "^2.0.1"
   },
@@ -28,17 +28,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/a11n/RedmineCLI.git"
+    "url": "https://github.com/caherrera/RedmineCLI.git"
   },
   "keywords": [
     "Redmine",
     "CLI",
     "REST"
   ],
-  "author": "André Diermann",
+  "author": "Carlos Herrera",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/a11n/RedmineCLI/issues"
+    "url": "https://github.com/caherrera/RedmineCLI/issues"
   },
-  "homepage": "https://github.com/a11n/RedmineCLI"
+  "homepage": "https://github.com/caherrera/RedmineCLI"
 }
