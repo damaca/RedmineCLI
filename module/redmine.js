@@ -15,13 +15,15 @@ if (fs.existsSync(config_json = homedir + '/.redmine-cli.json')) {
 }
 
 var throwWhenNotConnected = function () {
-    if (!nconf.get('serverUrl') || !nconf.get('apiKey'))
-        throw 'Not connected.'
+    if ( typeof process.env.API_KEY == 'undefined' && typeof process.env.SERVER_URL == 'undefined' ) {
+       if (!nconf.get('serverUrl') || !nconf.get('apiKey'))
+           throw 'Not connected.'
+    }
 }
 
 var req = function (method, serverUrl, apiKey, path, options) {
-    serverUrl = serverUrl || nconf.get('serverUrl');
-    apiKey = apiKey || nconf.get('apiKey');
+    serverUrl = process.env.SERVER_URL || serverUrl || nconf.get('serverUrl');
+    apiKey = process.env.API_KEY || apiKey || nconf.get('apiKey');
 
     var url = serverUrl + path;
     options.headers = {'X-Redmine-API-Key': apiKey};
